@@ -1,0 +1,46 @@
+﻿@model Survey_Task.Models.QRCodeDataModel
+@{
+    ViewData["Title"] = "Scan QR Code";
+}
+
+<h1>Scan QR Code</h1>
+<div id="qr-reader" style="width: 500px; height: 500px;"></div>
+<div id="qr-reader-results"></div>
+
+<script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
+<script>
+    function onScanSuccess(decodedText, decodedResult) {
+        document.getElementById('qr-reader-results').innerText = decodedText;
+
+        // Send data to the server
+        fetch('/Survey/ProcessScan', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ qrCodeData: decodedText })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('QR code processed and saved successfully');
+                } else {
+                    alert('Error processing QR code: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while processing the QR code.');
+            });
+    }
+
+    function onScanError(error) {
+        console.error(`QR code scan error: ${error}`);
+    }
+
+    var html5QrCode = new Html5Qrcode("qr-reader");
+    html5QrCode.start({ facingMode: "environment" }, { fps: 10 }, onScanSuccess, onScanError)
+        .catch((err) => {
+            console.error(`Unable to start the QR code scanner: ${err}`);
+        });
+</script>

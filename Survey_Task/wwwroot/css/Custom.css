@@ -1,0 +1,73 @@
+﻿/* Custom CSS styles */
+.survey-container {
+    border: 2px solid #007bff;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Position QR code absolutely */
+}
+
+.ratings-section,
+.comments-section {
+    border: 1px solid #007bff;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+    .ratings-section h4,
+    .comments-section h4 {
+        color: #007bff;
+        text-align: center; /* Center the header text */
+    }
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group select,
+.form-group input,
+.form-group textarea {
+    border: 1px solid #007bff;
+}
+
+.form-group .row {
+    margin-bottom: 15px;
+}
+
+.rating-options {
+    display: flex;
+    justify-content: space-around;
+}
+
+    .rating-options div {
+        text-align: center;
+    }
+
+.text-center img {
+    border: 1px solid #007bff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Adjustments for RTL alignment */
+body {
+    direction: rtl;
+}
+
+.ratings-section .rating-row .col-md-2 {
+    text-align: right;
+}
+
+/* QR Code positioning */
+.qr-code {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border: 1px solid #007bff;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
