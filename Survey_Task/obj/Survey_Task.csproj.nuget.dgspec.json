@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MG Magic\\source\\repos\\Survey_Task\\Survey_Task.csproj": {}
+    "C:\\Users\\MG Magic\\Desktop\\task\\Survey_Task\\Survey_Task.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MG Magic\\source\\repos\\Survey_Task\\Survey_Task.csproj": {
+    "C:\\Users\\MG Magic\\Desktop\\task\\Survey_Task\\Survey_Task.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MG Magic\\source\\repos\\Survey_Task\\Survey_Task.csproj",
+        "projectUniqueName": "C:\\Users\\MG Magic\\Desktop\\task\\Survey_Task\\Survey_Task.csproj",
         "projectName": "Survey_Task",
-        "projectPath": "C:\\Users\\MG Magic\\source\\repos\\Survey_Task\\Survey_Task.csproj",
+        "projectPath": "C:\\Users\\MG Magic\\Desktop\\task\\Survey_Task\\Survey_Task.csproj",
         "packagesPath": "C:\\Users\\MG Magic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MG Magic\\source\\repos\\Survey_Task\\obj\\",
+        "outputPath": "C:\\Users\\MG Magic\\Desktop\\task\\Survey_Task\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MG Magic\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -69,6 +69,10 @@
             "QRCoder": {
               "target": "Package",
               "version": "[1.6.0, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             }
           },
           "imports": [

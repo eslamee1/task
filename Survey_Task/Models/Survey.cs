@@ -21,18 +21,22 @@ namespace Survey_Task.Models
         [Required]
         public string Park { get; set; }
 
+        // Date and time based on the selected month and day
         public DateTime DateAndTime { get; set; }
 
         [NotMapped]
-        public string[] SelectedMonths { get; set; } = new string[0];
-        [NotMapped]
-        public int[] SelectedDays { get; set; } = new int[0];
-        [NotMapped]
-        public string[] SelectedWeekDays { get; set; } = new string[0];
+        public string SelectedMonth { get; set; }
 
-        // Updated to use a List of Rating objects
-        public List<Rating> RatingList { get; set; } = new List<Rating>();
+        [NotMapped]
+        public int SelectedDay { get; set; }
 
-        public string Comments { get; set; }
+        
+        public String? SelectedWeekDay { get; set; }
+
+        // Ratings list
+        public List<Rating>? RatingList { get; set; } = new List<Rating>();
+
+        public string? Comments { get; set; }
+        public string QRCodeUrl { get; set; }
     }
 }

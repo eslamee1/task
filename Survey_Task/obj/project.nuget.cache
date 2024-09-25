@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sdbE75XIGnY=",
+  "dgSpecHash": "qb7M7gnQR3g=",
   "success": true,
-  "projectFilePath": "C:\\Users\\MG Magic\\source\\repos\\Survey_Task\\Survey_Task.csproj",
+  "projectFilePath": "C:\\Users\\MG Magic\\Desktop\\task\\Survey_Task\\Survey_Task.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MG Magic\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\MG Magic\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

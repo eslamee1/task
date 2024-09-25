@@ -2,6 +2,10 @@
 using Survey_Task.Models;
 using System.Collections.Generic;
 using System.Linq;
+using QRCoder;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 
 namespace Survey_Task.Controllers
 {
@@ -20,40 +24,84 @@ namespace Survey_Task.Controllers
             return View();
         }
 
+
         [HttpPost]
-        public IActionResult Create(Survey survey, string[] SelectedMonths, int[] SelectedDays, string[] SelectedWeekDays, Dictionary<string, int> Ratings)
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Survey survey, string SelectedMonth, int SelectedDay, DayOfWeek SelectedWeekDay, Dictionary<string, int> Ratings)
         {
             if (ModelState.IsValid)
             {
-                // Assign the selected values to the survey object
-                survey.SelectedMonths = SelectedMonths ?? new string[0];
-                survey.SelectedDays = SelectedDays ?? new int[0];
-                survey.SelectedWeekDays = SelectedWeekDays ?? new string[0];
+                // Parse the selected month
+                if (!string.IsNullOrEmpty(SelectedMonth) && SelectedDay > 0)
+                {
+                    var selectedMonth = Enum.Parse<Survey_Task.Models.Month>(SelectedMonth);
+                    int currentYear = DateTime.Now.Year;
 
-                // Convert the dictionary to a list of Rating objects
+                    // Handle potential invalid date combinations
+                    try
+                    {
+                        
+                        survey.DateAndTime = new DateTime(currentYear, (int)selectedMonth + 1, SelectedDay, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+                        survey.SelectedWeekDay = SelectedWeekDay.ToString(); // Store the selected weekday
+                    }
+                    catch (ArgumentOutOfRangeException ex)
+                    {
+                        ModelState.AddModelError("", "Invalid date selected.");
+                        return View(survey);
+                    }
+                }
+                else
+                {
+                    // Default to DateTime.Now if no selection is made
+                    survey.DateAndTime = DateTime.Now;
+                }
+
+                // Process the ratings as before
                 if (Ratings != null && Ratings.Any())
                 {
                     survey.RatingList = Ratings.Select(r => new Rating
                     {
-                        ItemName = r.Key, // Key from the dictionary (e.g. "منطقة الخدمات")
-                        Score = r.Value   // Value from the dictionary (e.g. 5)
+                        ItemName = r.Key,
+                        Score = r.Value
                     }).ToList();
                 }
+                // Generate a unique URL for the survey
+                survey.QRCodeUrl = Url.Action("Details", "Survey", new { id = survey.Id }, Request.Scheme); // Adjust as needed
 
                 // Save the survey to the database
                 _context.Surveys.Add(survey);
                 _context.SaveChanges();
 
-                return RedirectToAction("Success"); // Redirect to success page or another action
+                // Generate QR code
+                using (var qrGenerator = new QRCodeGenerator())
+                {
+                    var qrCodeData = qrGenerator.CreateQrCode($"https://yourdomain.com/Survey/Details/{survey.Id}", QRCodeGenerator.ECCLevel.Q);
+                    using (var qrCode = new QRCoder.QRCode(qrCodeData)) // Ensure this is correct
+                    {
+                        using (var bitmap = qrCode.GetGraphic(20))
+                        {
+                            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Images", $"{survey.Id}.png");
+                            bitmap.Save(filePath, ImageFormat.Png); // Save the QR code image
+                        }
+                    }
+                }
+
+                return RedirectToAction("Success", new { surveyId = survey.Id });
             }
 
-            return View(survey); // Return the same view if the model state is invalid
+            return View(survey);
         }
 
+
         [HttpGet]
-        public IActionResult Success()
+        public IActionResult Success(int surveyId) // Accept surveyId as a parameter
         {
-            return View();
+            var survey = _context.Surveys.Find(surveyId); // Get the survey from the database
+            if (survey == null)
+            {
+                return NotFound(); // Handle case where survey doesn't exist
+            }
+            return View(survey); // Pass the survey object to the view
         }
 
         // GET: /Survey/Scan

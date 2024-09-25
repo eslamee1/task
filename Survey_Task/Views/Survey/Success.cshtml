@@ -1,9 +1,15 @@
-﻿@{
-    ViewData["Title"] = "Survey Submitted Successfully";
-}
+﻿@model Survey_Task.Models.Survey
 
 <div class="text-center">
     <h2>Thank you for your feedback!</h2>
     <p>Your survey has been submitted successfully.</p>
+
+    @if (!string.IsNullOrEmpty(Model.QRCodeUrl))
+    {
+        <div class="qr-code">
+            <img src="@Url.Content("~/Images/" + Model.QRCodeUrl)" alt="QR Code" class="img-fluid qr-img" />
+        </div>
+    }
+
     <a href="@Url.Action("Create", "Survey")" class="btn btn-primary">Submit Another Survey</a>
 </div>

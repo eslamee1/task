@@ -28,6 +28,34 @@
                 margin: 0 2px;
             }
 
+    .day-row {
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping for multiple buttons */
+    }
+
+        .radio-label {
+            display: flex;
+            flex-direction: column; /* Stack children vertically */
+            align-items: center; /* Center items */
+            margin: 8px; /* Add space between radio buttons */
+        }
+
+        .radio-label input {
+            margin-bottom: 5px; /* Space between radio button and number */
+        }
+
+        .week-row,
+        .month-row {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping for multiple buttons */
+        }
+
+        .radio-label input {
+            margin-top: 5px; /* Space between number and radio button */
+        }
+
+
+
     /* Adjust checkbox size */
     input[type="checkbox"] {
         width: 18px;
@@ -103,8 +131,8 @@
                     <label asp-for="Region">المنطقة</label>
                     <select asp-for="Region" class="form-control">
                         <option value="">اختر المنطقة</option>
-                        <option value="Region1">berkt-elsabaa</option>
-                        <option value="Region1">maadi</option>
+                        <option value="berkt-elsabaa">berkt-elsabaa</option>
+                        <option value="maadi">maadi</option>
                         <option value="Region2">Region 1</option>
                         <option value="Region2">Region 2</option>
                     </select>
@@ -117,8 +145,8 @@
                     <label asp-for="City">المدينة</label>
                     <select asp-for="City" class="form-control">
                         <option value="">اختر المدينة</option>
-                        <option value="City1">sheben-elkom</option>
-                        <option value="City2">Cairo</option>
+                        <option value="sheben-elkom">sheben-elkom</option>
+                        <option value="Cairo">Cairo</option>
                         <option value="City2">City 1</option>
                         <option value="City2">City 2</option>
                     </select>
@@ -131,8 +159,8 @@
                     <label asp-for="Province">المحافظة</label>
                     <select asp-for="Province" class="form-control">
                         <option value="">اختر المحافظة</option>
-                        <option value="Province1">menofia</option>
-                        <option value="Province2">cairo</option>
+                        <option value="menofia">menofia</option>
+                        <option value="cairo">cairo</option>
                         <option value="Province2">Province 1</option>
                         <option value="Province2">Province 2</option>
                     </select>
@@ -145,8 +173,8 @@
                     <label asp-for="Park">المنتزة</label>
                     <select asp-for="Park" class="form-control">
                         <option value="">اختر المنتزة</option>
-                        <option value="Park1">المنتزه الشمالي </option>
-                        <option value="Park2">المنتزة الجنوبي</option>
+                        <option value="المنتزه الشمالي">المنتزه الشمالي </option>
+                        <option value="المنتزة الجنوبي">المنتزة الجنوبي</option>
                         <option value="Park2">Park 2</option>
                         <option value="Park2">Park 2</option>
                     </select>
@@ -154,38 +182,52 @@
             </div>
         </div>
 
-        <!-- Calendar for selecting date -->
+        <!-- Calendar for selecting a single month, day, and weekday -->
         <div class="form-group">
-            <label>التاريخ</label>
-            <div class="calendar-section">
-                <label>الشهر:</label>
-                <div class="month-row">
-                    @foreach (var month in Enum.GetValues(typeof(Month)))
-                    {
-                        <label>
-                            <input type="checkbox" name="SelectedMonths" value="@month" /> @month
-                        </label>
-                    }
-                </div>
-
-                <label>اليوم:</label>
-                <div class="day-row">
-                    @for (int i = 1; i <= 31; i++)
-                    {
-                        <label><input type="checkbox" name="SelectedDays" value="@i" /> @i</label>
-                    }
-                </div>
-
-                <label>اليوم في الأسبوع:</label>
-                <div class="week-row">
-                    @foreach (var day in Enum.GetValues(typeof(DayOfWeek)))
-                    {
-                        <label>
-                            <input type="checkbox" name="SelectedWeekDays" value="@day" /> @day
-                        </label>
-                    }
-                </div>
+            <label>اليوم في الأسبوع:</label>
+            <div class="week-row">
+                @foreach (var day in Enum.GetValues(typeof(DayOfWeek)))
+                {
+                    <label class="radio-label">
+                        <span> @day</span>
+                        <input type="radio" name="SelectedWeekDay" value="@day" />
+                    </label>
+                }
             </div>
+           
+
+            <label>اليوم:</label>
+            <div class="day-row">
+                @for (int i = 1; i <= 31; i++)
+                {
+                    <label class="radio-label">
+                        <span>@i</span>
+                        <input type="radio" name="SelectedDay" value="@i" />
+                        
+                    </label>
+                }
+            </div>
+            <label>الشهر:</label>
+            <div class="month-row">
+                @foreach (var month in Enum.GetValues(typeof(Survey_Task.Models.Month)))
+                {
+                    <label class="radio-label">
+                        <span>@month</span>
+                        <input type="radio" name="SelectedMonth" value="@month" />
+                    </label>
+                }
+            </div>
+
+           @*  <label>اليوم في الأسبوع:</label>
+            <div class="week-row">
+                @foreach (var day in Enum.GetValues(typeof(DayOfWeek)))
+                {
+                    <label class="radio-label">
+                        <span> @day</span>
+                        <input type="radio" name="SelectedWeekDay" value="@day" />
+                    </label>
+                }
+            </div> *@
         </div>
 
         <h3 class="text-center">نموذج الاستبيان للزوار</h3>
