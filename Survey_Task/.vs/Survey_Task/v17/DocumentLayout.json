@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\MG Magic\\Desktop\\task\\Survey_Task\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{887EB7A9-D63F-452D-9F52-6BA8BDCD90DF}|Survey_Task.csproj|c:\\users\\mg magic\\desktop\\task\\survey_task\\views\\survey\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{887EB7A9-D63F-452D-9F52-6BA8BDCD90DF}|Survey_Task.csproj|solutionrelative:views\\survey\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{887EB7A9-D63F-452D-9F52-6BA8BDCD90DF}|Survey_Task.csproj|c:\\users\\mg magic\\desktop\\task\\survey_task\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{887EB7A9-D63F-452D-9F52-6BA8BDCD90DF}|Survey_Task.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -31,6 +35,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\MG Magic\\Desktop\\task\\Survey_Task\\Views\\Survey\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Survey\\Create.cshtml",
+              "ToolTip": "C:\\Users\\MG Magic\\Desktop\\task\\Survey_Task\\Views\\Survey\\Create.cshtml",
+              "RelativeToolTip": "Views\\Survey\\Create.cshtml",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAKYAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-25T17:49:12.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\MG Magic\\Desktop\\task\\Survey_Task\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -43,7 +60,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\MG Magic\\Desktop\\task\\Survey_Task\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
