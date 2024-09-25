@@ -12,7 +12,8 @@
           "Microsoft.EntityFrameworkCore.Design": "8.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.8",
-          "QRCoder": "1.6.0"
+          "QRCoder": "1.4.3",
+          "System.Drawing.Common": "6.0.0"
         },
         "runtime": {
           "Survey_Task.dll": {}
@@ -605,11 +606,11 @@
           }
         }
       },
-      "QRCoder/1.6.0": {
+      "QRCoder/1.4.3": {
         "runtime": {
           "lib/net6.0/QRCoder.dll": {
-            "assemblyVersion": "1.6.0.0",
-            "fileVersion": "1.6.0.0"
+            "assemblyVersion": "1.4.3.0",
+            "fileVersion": "1.4.3.0"
           }
         }
       },
@@ -1169,12 +1170,12 @@
       "path": "mono.texttemplating/2.2.1",
       "hashPath": "mono.texttemplating.2.2.1.nupkg.sha512"
     },
-    "QRCoder/1.6.0": {
+    "QRCoder/1.4.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-XmPA81eo+oRxBuyVdswsSkTGTE1d3thfF11Z1PdD7oB56A6HU4G4AAOdySmGRMb/cljwlFTMWUtosGEnwpS6GA==",
-      "path": "qrcoder/1.6.0",
-      "hashPath": "qrcoder.1.6.0.nupkg.sha512"
+      "sha512": "sha512-fWuFqjm8GTlEb2GqBl3Hi8HZZeZQwBSHxvRPtPjyNbT82H0ff0JwavKRBmMaXCno1Av6McPC8aJzri0Mj2w9Jw==",
+      "path": "qrcoder/1.4.3",
+      "hashPath": "qrcoder.1.4.3.nupkg.sha512"
     },
     "System.CodeDom/4.4.0": {
       "type": "package",

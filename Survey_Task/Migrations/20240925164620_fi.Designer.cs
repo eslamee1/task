@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Survey_Task.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240919215712_esl")]
-    partial class esl
+    [Migration("20240925164620_fi")]
+    partial class fi
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,7 +36,7 @@ namespace Survey_Task.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Score")
+                    b.Property<int?>("Score")
                         .HasColumnType("int");
 
                     b.Property<int?>("SurveyId")
@@ -47,6 +47,26 @@ namespace Survey_Task.Migrations
                     b.HasIndex("SurveyId");
 
                     b.ToTable("Ratings");
+                });
+
+            modelBuilder.Entity("Survey_Task.Models.ScannedQRCode", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("QRCodeData")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ScannedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ScannedQRCodes");
                 });
 
             modelBuilder.Entity("Survey_Task.Models.Survey", b =>
@@ -62,7 +82,6 @@ namespace Survey_Task.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Comments")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DateAndTime")
@@ -76,7 +95,14 @@ namespace Survey_Task.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("QRCodeUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Region")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SelectedWeekDay")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

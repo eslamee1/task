@@ -7,6 +7,6 @@ namespace Survey_Task.Models
     {
         public int Id { get; set; }
         public string ItemName { get; set; } // e.g., "منطقة الخدمات"
-        public int Score { get; set; }       // Rating value (1 to 5)
+        public int? Score { get; set; }       // Rating value (1 to 5)
     }
 }

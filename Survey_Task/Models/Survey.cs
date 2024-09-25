@@ -30,13 +30,13 @@ namespace Survey_Task.Models
         [NotMapped]
         public int SelectedDay { get; set; }
 
-        
-        public String? SelectedWeekDay { get; set; }
+
+        public String SelectedWeekDay { get; set; }
 
         // Ratings list
         public List<Rating>? RatingList { get; set; } = new List<Rating>();
 
         public string? Comments { get; set; }
-        public string QRCodeUrl { get; set; }
+        public string? QRCodeUrl { get; set; }
     }
 }

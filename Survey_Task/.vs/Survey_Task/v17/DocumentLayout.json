@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\MG Magic\\Desktop\\task\\Survey_Task\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{887EB7A9-D63F-452D-9F52-6BA8BDCD90DF}|Survey_Task.csproj|c:\\users\\mg magic\\desktop\\task\\survey_task\\controllers\\surveycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{887EB7A9-D63F-452D-9F52-6BA8BDCD90DF}|Survey_Task.csproj|solutionrelative:controllers\\surveycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{887EB7A9-D63F-452D-9F52-6BA8BDCD90DF}|Survey_Task.csproj|c:\\users\\mg magic\\desktop\\task\\survey_task\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{887EB7A9-D63F-452D-9F52-6BA8BDCD90DF}|Survey_Task.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{887EB7A9-D63F-452D-9F52-6BA8BDCD90DF}|Survey_Task.csproj|c:\\users\\mg magic\\desktop\\task\\survey_task\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{887EB7A9-D63F-452D-9F52-6BA8BDCD90DF}|Survey_Task.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,15 +31,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SurveyController.cs",
-              "DocumentMoniker": "C:\\Users\\MG Magic\\Desktop\\task\\Survey_Task\\Controllers\\SurveyController.cs",
-              "RelativeDocumentMoniker": "Controllers\\SurveyController.cs",
-              "ToolTip": "C:\\Users\\MG Magic\\Desktop\\task\\Survey_Task\\Controllers\\SurveyController.cs",
-              "RelativeToolTip": "Controllers\\SurveyController.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAowFMAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-19T21:13:52.078Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\MG Magic\\Desktop\\task\\Survey_Task\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\MG Magic\\Desktop\\task\\Survey_Task\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-25T17:38:23.986Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\MG Magic\\Desktop\\task\\Survey_Task\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\MG Magic\\Desktop\\task\\Survey_Task\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T17:38:20.711Z"
             }
           ]
         }

@@ -1,5 +1,4 @@
-﻿
-@model Survey_Task.Models.Survey
+﻿@model Survey_Task.Models.Survey
 
 @{
     ViewData["Title"] = "Create Survey";
@@ -33,26 +32,26 @@
         flex-wrap: wrap; /* Allow wrapping for multiple buttons */
     }
 
-        .radio-label {
-            display: flex;
-            flex-direction: column; /* Stack children vertically */
-            align-items: center; /* Center items */
-            margin: 8px; /* Add space between radio buttons */
-        }
+    .radio-label {
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        align-items: center; /* Center items */
+        margin: 8px; /* Add space between radio buttons */
+    }
 
         .radio-label input {
             margin-bottom: 5px; /* Space between radio button and number */
         }
 
-        .week-row,
-        .month-row {
-            display: flex;
-            flex-wrap: wrap; /* Allow wrapping for multiple buttons */
-        }
+    .week-row,
+    .month-row {
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping for multiple buttons */
+    }
 
-        .radio-label input {
-            margin-top: 5px; /* Space between number and radio button */
-        }
+    .radio-label input {
+        margin-top: 5px; /* Space between number and radio button */
+    }
 
 
 
@@ -108,10 +107,6 @@
         width: 130%; /* Makes the image responsive */
         height: auto; /* Maintains aspect ratio */
     }
-
-
-
-
 
 </style>
 
@@ -194,7 +189,7 @@
                     </label>
                 }
             </div>
-           
+
 
             <label>اليوم:</label>
             <div class="day-row">
@@ -203,7 +198,7 @@
                     <label class="radio-label">
                         <span>@i</span>
                         <input type="radio" name="SelectedDay" value="@i" />
-                        
+
                     </label>
                 }
             </div>
@@ -218,15 +213,15 @@
                 }
             </div>
 
-           @*  <label>اليوم في الأسبوع:</label>
+            @*  <label>اليوم في الأسبوع:</label>
             <div class="week-row">
-                @foreach (var day in Enum.GetValues(typeof(DayOfWeek)))
-                {
-                    <label class="radio-label">
-                        <span> @day</span>
-                        <input type="radio" name="SelectedWeekDay" value="@day" />
-                    </label>
-                }
+            @foreach (var day in Enum.GetValues(typeof(DayOfWeek)))
+            {
+            <label class="radio-label">
+            <span> @day</span>
+            <input type="radio" name="SelectedWeekDay" value="@day" />
+            </label>
+            }
             </div> *@
         </div>
 
